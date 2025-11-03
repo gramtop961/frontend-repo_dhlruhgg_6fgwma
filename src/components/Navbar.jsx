@@ -1,14 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Dot, PanelsTopLeft } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'education', label: 'Education' },
-  { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
-  { id: 'achievements', label: 'Achievements' },
-  { id: 'research', label: 'Research' },
   { id: 'skills', label: 'Skills' },
   { id: 'contact', label: 'Contact' },
 ];
@@ -34,18 +29,19 @@ export default function Navbar() {
   return (
     <header className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[94%] md:w-auto transition-all ${scrolled ? 'drop-shadow-xl' : ''}`}>
       <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-full px-4 py-2 flex items-center gap-3">
+        {/* Brand */}
         <button
           className="flex items-center gap-2 rounded-full px-3 py-1.5 hover:bg-white/10 transition"
           onClick={() => scrollTo('home')}
           aria-label="Go to home"
         >
-          <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/10">
-            <PanelsTopLeft className="w-4 h-4 text-white" />
+          <span className="text-sm font-semibold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">
+            SRIVANI
           </span>
-          <span className="font-semibold text-white">Srivani</span>
         </button>
 
-        <div className="hidden md:flex items-center gap-1">
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -55,21 +51,26 @@ export default function Navbar() {
               {item.label}
             </button>
           ))}
-        </div>
+        </nav>
 
-        <div className="ml-auto flex items-center gap-2">
-          <span className="hidden sm:flex items-center gap-1 text-xs text-zinc-300 border border-white/10 rounded-full px-2 py-1">
-            <Dot className="w-5 h-5 text-orange-500" />
-            Available for Work
-          </span>
+        {/* CTA */}
+        <div className="ml-auto hidden sm:flex">
           <button
-            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition"
-            onClick={() => setOpen((v) => !v)}
-            aria-label="Toggle Menu"
+            onClick={() => scrollTo('contact')}
+            className="rounded-full bg-white text-black text-sm font-medium px-3 py-1.5 hover:bg-white/90 transition"
           >
-            {open ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5 text-white" />}
+            Hire me
           </button>
         </div>
+
+        {/* Mobile toggle */}
+        <button
+          className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition ml-auto"
+          onClick={() => setOpen((v) => !v)}
+          aria-label="Toggle Menu"
+        >
+          {open ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5 text-white" />}
+        </button>
       </div>
 
       {open && (
@@ -84,6 +85,9 @@ export default function Navbar() {
                 {item.label}
               </button>
             ))}
+            <button onClick={() => scrollTo('contact')} className="col-span-2 rounded-2xl bg-white text-black text-sm font-medium px-3 py-2 hover:bg-white/90 transition">
+              Hire me
+            </button>
           </nav>
         </div>
       )}

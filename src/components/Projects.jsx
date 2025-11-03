@@ -11,10 +11,10 @@ function ProjectCard({ title, description, tags, link, image }) {
       <div className="aspect-video w-full bg-gradient-to-br from-cyan-500/20 to-purple-500/20" style={{ backgroundImage: image ? `url(${image})` : undefined, backgroundSize: 'cover', backgroundPosition: 'center' }} />
       <div className="p-4">
         <div className="flex items-start justify-between gap-4">
-          <h3 className="text-white font-medium text-lg">{title}</h3>
+          <h3 className="text-white font-semibold text-lg tracking-tight">{title}</h3>
           <svg className="h-5 w-5 text-white/60 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
         </div>
-        <p className="mt-2 text-sm text-white/70">{description}</p>
+        <p className="mt-2 text-sm text-white/70 leading-relaxed">{description}</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {tags.map((t) => (
             <span key={t} className="text-xs text-white/80 bg-white/5 border border-white/10 rounded-md px-2 py-1">{t}</span>

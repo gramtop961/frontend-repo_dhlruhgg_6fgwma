@@ -5,7 +5,7 @@ import Contact from './components/Contact';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#0D0D0D] text-white">
+    <div className="min-h-screen bg-[#0B0B0F] text-white font-manrope antialiased selection:bg-white/10 selection:text-white">
       <Navbar />
       <main>
         <Hero />

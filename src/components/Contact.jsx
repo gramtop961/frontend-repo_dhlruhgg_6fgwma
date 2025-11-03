@@ -13,25 +13,25 @@ export default function Contact() {
               <input
                 name="name"
                 placeholder="Your name"
-                className="w-full rounded-md bg-white/5 border border-white/10 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-cyan-500/60"
+                className="w-full rounded-md bg-white/5 border border-white/10 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-indigo-500/60"
               />
               <input
                 name="email"
                 placeholder="Email address"
                 type="email"
-                className="w-full rounded-md bg-white/5 border border-white/10 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-cyan-500/60"
+                className="w-full rounded-md bg-white/5 border border-white/10 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-indigo-500/60"
               />
               <textarea
                 name="message"
                 placeholder="Tell me a bit about your project..."
                 rows={5}
-                className="sm:col-span-2 w-full rounded-md bg-white/5 border border-white/10 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-cyan-500/60"
+                className="sm:col-span-2 w-full rounded-md bg-white/5 border border-white/10 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-indigo-500/60"
               />
               <div className="sm:col-span-2 flex items-center justify-between">
                 <p className="text-xs text-white/50">I usually reply within 24 hours.</p>
                 <button
                   type="submit"
-                  className="inline-flex items-center rounded-md bg-white text-black px-4 py-2 text-sm font-medium hover:bg-white/90 transition-colors"
+                  className="inline-flex items-center rounded-full bg-white text-black px-5 py-2 text-sm font-medium hover:bg-white/90 transition-colors"
                   onClick={(e) => {
                     e.preventDefault();
                     const form = e.currentTarget.closest('form');
